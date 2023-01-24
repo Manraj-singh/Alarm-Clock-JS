@@ -109,17 +109,28 @@
 
   //ADDING setInterval to listen continously
   setInterval(() => {
-    let d = new Date();
+    let date = new Date();
 
     // returns the date portion of a date object as a string, using locale conventions.
-    let date = d.toLocaleDateString();
-    // returns the time portion of a date object as a string, using locale conventions.
-    let time = d.toLocaleTimeString();
+    let dT = date.toLocaleDateString();
+    // format the time portion .
+   let h = date.getHours(),
+    m = date.getMinutes(),
+    s = date.getSeconds(),
+    ampm = "AM";
+    if(h >= 12) {
+        ampm = "PM";
+    }
+    h = h == 0 ? h = 12 : h;
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+    let time =`${h}:${m}:${s} ${ampm}`
     let t = time.split(":");
-    time = t[0] < 10 ? "0" + time : time;
+    
     //updating time evry second
     currTime.innerHTML = time;
-    currDate.innerHTML = date;
+    currDate.innerHTML = dT;
 
     if (alarmsArray.includes(time)) {
       myModal.setAttribute("open", "");
@@ -130,7 +141,7 @@
       audio.loop=true;
       t[1]=t[1] -0 +5;
       t[1]= t[1]<10?'0'+t[1]:t[1];
-      snoozed =t[0] < 10? "0" + `${t[0]}:${t[1]}:${t[2]}`: `${t[0]}:${t[1]}:${t[2]}`;
+      snoozed = `${t[0]}:${t[1]}:${t[2]}`;
       delTime = time;
       alarmsArray = alarmsArray.filter((alrm) => {
         return alrm != delTime;
