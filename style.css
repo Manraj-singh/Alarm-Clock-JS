@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  padding-left: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(217, 217, 217);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(171, 193, 221);
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0 10px; */
+  min-height: 100vh;
+  background: #4a98f7;
+  /* margin-top: 50px; */
+}
+h1 {
+  margin: 0;
+}
+
+.clock-img {
+  width: 20px;
+  height: 20px;
+}
+.card-body {
+  min-width: 370px !important;
+  max-width: 650px !important;
+}
+
+#set-alarm {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 8px;
+}
+.form-select {
+  width: 15% !important;
+  padding: 4px;
+  font-size: small;
+}
+.btn {
+  margin-left: 10px;
+}
+#alarms-list {
+  text-align: left;
+  width: 90%;
+  margin: 15px auto;
+}
+
+.delete-all {
+  color: lightcoral;
+}
+.delete-all :hover {
+  color: rgb(231, 18, 18) !important;
+  cursor: pointer;
+}
+.allAlarms {
+  padding: 0;
+  min-height: 50px;
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.alarm {
+  background-color: #4a98f7;
+  color: antiquewhite;
+  display: flex;
+  list-style-type: circle;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin: 10px 0;
+  padding: 0 10px;
+  font-weight: 600;
+  border: 1px solid powderblue;
+  border-radius: 7px;
+}
+
+.fa-trash-alt {
+  color: brown;
+}
+.delete:hover {
+  transform: scale(1.2, 1.1);
+  color: rgb(231, 18, 18);
+  /* transition: ease-in-out 0.1s; */
+}
+#my-modal{
+    width: 370px;
+    height: 170px;
+    top: 0%;
+    margin:0 auto;
+    background-color: white;
+    border: 1px solid aliceblue;
+    border-radius: 6px;
+   text-align: center;
+}
+#my-modal img{
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+
